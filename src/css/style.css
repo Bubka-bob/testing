@@ -1,0 +1,103 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.input-button-container {
+    display: flex;
+    align-items: center;
+}
+
+input[type='tel'],
+button {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type='tel'] {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding-left: 10px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+input[type='tel']:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #137413;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 18px;
+    color: green;
+}
+
+#result.error-message {
+    color: red;
+}
+
+#payment-system-logos {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 40px; 
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.logo.active {
+    filter: grayscale(0%);
+}
