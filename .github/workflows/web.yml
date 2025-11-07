@@ -28,6 +28,7 @@ jobs:
           cache: 'yarn'
       - run: yarn
       - run: yarn lint
+      -  run: yarn test
 
   build:
     needs: [eslint]

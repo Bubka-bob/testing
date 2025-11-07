@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (cardNumber.trim() === "") {
         resultDiv.textContent = "Введите номер карты.";
-        resultDiv.classList.add("error-message");
+        resultDiv.classList.remove("valid");
+        resultDiv.classList.add("invalid");
         logos.forEach((logo) => logo.classList.remove("active"));
       } else if (isValidCreditCardNumber(cardNumber)) {
         const detectedSystem = detectPaymentSystem(cardNumber);
         resultDiv.textContent = `Карточка действительна. Система: ${detectedSystem}`;
-
+        resultDiv.classList.remove("invalid");
+        resultDiv.classList.add("valid");
         logos.forEach((logo) => {
           logo.classList.remove("active");
           if (logo.alt === detectedSystem) {
@@ -28,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       } else {
         resultDiv.textContent = "Ошибка: Неверный номер карты.";
-        resultDiv.classList.add("error-message");
+        resultDiv.classList.remove("valid");
+        resultDiv.classList.add("invalid");
         logos.forEach((logo) => logo.classList.remove("active"));
       }
     });
